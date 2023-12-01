@@ -14,9 +14,43 @@ header {
     border-bottom-style: outset;
 }
 
-.modal {
-    margin-top: 30px;
+#open_modal {
     text-decoration: underline;
+    padding: 8px 16px;
+    border: none;
+    background-color: #ddd;
+}
+
+#modal_1 {
+    display: none;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(168, 168, 168, 0.5);
+}
+
+.modal_content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 50%;
+}
+
+.close_modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close_modal:hover, .close_modal:focus {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 section {
