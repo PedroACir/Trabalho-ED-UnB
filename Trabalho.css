@@ -3,14 +3,20 @@ body {
     flex-direction: column;
     height: 100vh;
     overflow-y: hidden; /* Com muito arquivos, isso pode quebrar a página*/
+    background-color: #ddd;
 }
 
 header {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     border-bottom-width: 2px;
     border-bottom-color: black;
     border-bottom-style: outset;
+}
+
+.modal {
+    margin-top: 30px;
+    text-decoration: underline;
 }
 
 section {
@@ -18,11 +24,30 @@ section {
     margin: 10px auto;
     text-align: center;
     height: 100vh;
+
+}
+
+.first_card {
+    width: fit-content;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #fileInput {
     padding: 8px 22px;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
+}
+
+#cargos {
+    margin-bottom: 20px;
+    width: 90%;
 }
 
 .buttonAdd {
@@ -43,6 +68,19 @@ section {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+.second_card {
+    width: fit-content;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 footer {

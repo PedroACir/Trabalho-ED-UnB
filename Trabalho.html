@@ -10,15 +10,34 @@
 <body>
     <header>
         <h1>Gerenciamento de Impressão</h1>
+        <span class="modal">Como funciona?</span>
     </header>
 
     <section>
-        <h2>Adicionar à Fila</h2>
-        <input type="file" id="fileInput" name="files">
-        <button class="buttonAdd" onclick=""> <i class="fas fa-plus"> </i> Adicionar à Fila</button>
-        <button class="buttonRemove" onclick=""> <i class="fas fa-trash"></i> Remover da Fila</button>
-        <h2>Fila de Impressão</h2>
-        <div id="queueDisplay"></div>
+        <div class="first_card">
+            <h2>Adicionar à Fila</h2>
+            <input type="file" id="fileInput" name="files">
+
+            <h2>Qual seu cargo?</h2>
+                <select name="cargos" id="cargos">
+                    <option value="presidente">Presidente</option>
+                    <option value="lider_núcleo">Líder de Núcleo</option>
+                    <option value="assessor_desenvolvedor">Assesor/Desenvolvedor</option>
+                    <option value="trainee">Trainee</option>
+                    <option value="ex_membro">Ex-membro</option>
+                </select>
+
+            <div class="buttons">  
+                <button class="buttonAdd" onclick=""> <i class="fas fa-plus"> </i> Adicionar à Fila</button>
+                <button class="buttonRemove" onclick=""> <i class="fas fa-trash"></i> Remover da Fila</button>
+            </div>  
+
+        </div>
+
+        <div class="second_card">
+            <h2>Fila de Impressão</h2>
+            <div id="queueDisplay"></div>
+        </div>
     </section>
 
     <footer>
