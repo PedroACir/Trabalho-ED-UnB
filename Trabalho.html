@@ -12,11 +12,46 @@
         <h1>Gerenciamento de Impressão</h1>
         <button id="open_modal">Como funciona?</button>
     </header>
-
+    
     <div id="modal_1" class="modal">
         <div class="modal_content">
             <span class="close_modal">&times;</span>
-            <h2>Como funciona?</h2>
+            <h2 class="modal_tittle">Como funciona?</h2>
+            <div class="div_add">
+                <button class="buttonAdd1" onclick=""> <i class="fas fa-plus"> </i> Adicionar à Fila</button>
+                <span> Botão para adicionar arquivos na fila de impressão</span>
+            </div>
+            <div class="div_remove">
+                <button class="buttonRemove1" onclick=""> <i class="fas fa-trash"></i> Remover da Fila</button>
+                <span> Botão para remover arquivo da lista de impressão</span>
+            </div>
+            <div class="div_addFile">
+                <button class="add_file" onclick="">Escolher arquivo</button>
+                <span> Botão para adicionar os arquivos na lista de impressão</span>
+            </div>
+            <div class="div_select">
+                <select name="cargos_sim" id="simulator">
+                    <option value="presidente_sim">Presidente</option>
+                    <option value="lider_núcleo_sim">Líder de Núcleo</option>
+                    <option value="assessor_desenvolvedor_sim">Assesor/Desenvolvedor</option>
+                    <option value="trainee_sim">Trainee</option>
+                    <option value="ex_membro_sim">Ex-membro</option>
+                </select>
+                <span>Seleção dos cargos da empresa, onde cada um possuí uma ordem de prioridade</span>
+            </div>
+            <h2>Ordem de prioridade dos cargos:</h2>
+            <div class="priority_order">
+                <h3>Presidente</h3>
+                <span>Primeiro lugar na ordem de prioridade</span>
+                <h3>Líder de Núcleo</h3>
+                <span>Segundo lugar na ordem de prioridade</span>
+                <h3>Assessor/ Desenvolvedor</h3>
+                <span>Terceiro lugar na ordem de prioridade</span>
+                <h3>Trainee</h3>
+                <span>Quarto lugar na ordem de prioridade</span>
+                <h3>Ex-membro</h3>
+                <span>Quinto lugar na ordem de prioridade</span>
+            </div>
         </div>
     </div>
 
