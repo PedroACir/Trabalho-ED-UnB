@@ -17,3 +17,26 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 };
+
+document.querySelector('.buttonAdd').addEventListener('click', function() {
+    var fileInput = document.querySelector('#fileInput');
+    var cargoInput = document.querySelector('#cargos');
+    var text = fileInput.value;
+    var cargo = cargoInput.value;
+  
+    fetch('/add_to_queue', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text: text, cargo: cargo })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            // Atualiza a div queueDisplay com a fila atualizada
+            var queueDisplay = document.querySelector('#queueDisplay');
+            queueDisplay.textContent = gerenciador.organiza();
+        }
+    });
+  });

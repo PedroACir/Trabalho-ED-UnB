@@ -100,5 +100,13 @@ class Imprimir:
 gerenciador = Imprimir()
 
 @app.route('/')
-def index():
+def home():
     return render_template('Trabalho.html')
+
+@app.route('/add_to_queue', methods=['POST'])
+def add_to_queue():
+ data = request.get_json()
+ text = data['text']
+ cargo = data['cargo']
+ gerenciador.adiciona(text, cargo)
+ return jsonify({'status': 'success'})
