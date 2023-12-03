@@ -18,25 +18,40 @@ window.onclick = function (event) {
     }
 };
 
+function atualizarFila() {
+    fetch('/get_fila')
+        .then(response => response.json())
+        .then(data => {
+            var filaDisplay = document.getElementById('queueDisplay');
+            filaDisplay.innerHTML = '';
+            for (var i = 0; i < data.length; i++) {
+                var arquivo = document.createElement('p');
+                arquivo.textContent = 'Arquivo: ' + data[i].nome_arquivo + ', Prioridade: ' + data[i].prioridade;
+                filaDisplay.appendChild(arquivo);
+            }
+        });
+  }
+
 document.querySelector('.buttonAdd').addEventListener('click', function() {
-    var fileInput = document.querySelector('#fileInput');
-    var cargoInput = document.querySelector('#cargos');
-    var text = fileInput.value;
-    var cargo = cargoInput.value;
-  
-    fetch('/add_to_queue', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ text: text, cargo: cargo })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success') {
-            // Atualiza a div queueDisplay com a fila atualizada
-            var queueDisplay = document.querySelector('#queueDisplay');
-            queueDisplay.textContent = gerenciador.organiza();
-        }
-    });
-  });
+   var nome_arquivo = document.getElementById('fileInput').value;
+   var cargo = document.getElementById('cargos').value;
+   fetch('/adicionar', {
+       method: 'POST',
+       body: new URLSearchParams({
+           'nome_arquivo': nome_arquivo,
+           'cargo': cargo
+       })
+   });
+});
+
+document.querySelector('.buttonRemove').addEventListener('click', function() {
+   var nome_arquivo = document.getElementById('fileInput').value;
+   fetch('/remover', {
+       method: 'POST',
+       body: new URLSearchParams({
+           'nome_arquivo': nome_arquivo
+       })
+   });
+});
+
+atualizarFila();
