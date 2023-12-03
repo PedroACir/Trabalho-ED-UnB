@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Fila de Impressão</title>
-    <link rel="stylesheet" href="Trabalho.css" >
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/Trabalho.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="{{ url_for('static', filename='js/Trabalho.js') }}"
+    type="module"
+    ></script>
 </head>
 
 <body>
@@ -32,10 +35,8 @@
             <div class="div_select">
                 <select name="cargos_sim" id="simulator">
                     <option value="presidente_sim">Presidente</option>
-                    <option value="lider_núcleo_sim">Líder de Núcleo</option>
                     <option value="assessor_desenvolvedor_sim">Assesor/Desenvolvedor</option>
                     <option value="trainee_sim">Trainee</option>
-                    <option value="ex_membro_sim">Ex-membro</option>
                 </select>
                 <span>Seleção dos cargos da empresa, onde cada um possuí uma ordem de prioridade</span>
             </div>
@@ -43,14 +44,12 @@
             <div class="priority_order">
                 <h3>Presidente</h3>
                 <span>Primeiro lugar na ordem de prioridade</span>
-                <h3>Líder de Núcleo</h3>
-                <span>Segundo lugar na ordem de prioridade</span>
                 <h3>Assessor/ Desenvolvedor</h3>
-                <span>Terceiro lugar na ordem de prioridade</span>
+                <span>Segundo lugar na ordem de prioridade</span>
                 <h3>Trainee</h3>
-                <span>Quarto lugar na ordem de prioridade</span>
-                <h3>Ex-membro</h3>
-                <span>Quinto lugar na ordem de prioridade</span>
+                <span>Terceiro lugar na ordem de prioridade</span>
+                <h3>Observação</h3>
+                <span>Esse gerenciador funciona adicionando apenas um arquivo por vez e definindo a ordem de prioridade para cada um</span>
             </div>
         </div>
     </div>
@@ -64,10 +63,8 @@
             <h2>Qual seu cargo?</h2>
                 <select name="cargos" id="cargos">
                     <option value="presidente">Presidente</option>
-                    <option value="lider_núcleo">Líder de Núcleo</option>
                     <option value="assessor_desenvolvedor">Assesor/Desenvolvedor</option>
                     <option value="trainee">Trainee</option>
-                    <option value="ex_membro">Ex-membro</option>
                 </select>
 
             <div class="buttons">  
@@ -87,6 +84,5 @@
         <h2 class="owners">Feito por: </h2>
         <span class="names">Jorge Lucas, Pedro Augusto e Vitor Ivan</span>
     </footer>
-    <script src="Trabalho.js"></script>
 </body>
 </html>
